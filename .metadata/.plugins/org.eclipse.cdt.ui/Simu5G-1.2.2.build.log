@@ -1,0 +1,15 @@
+03:59:26 **** Build of configuration gcc-release for project Simu5G-1.2.2 ****
+make MODE=release all 
+make[1]: Entering directory '/home/simu5g/workplace2/Simu5G-1.2.2/src'
+MSGC: apps/alert/AlertPacket.msg
+apps/alert/AlertPacket.msg:16: Error: cannot resolve import 'inet.common.INETDefs'
+apps/alert/AlertPacket.msg:17: Error: cannot resolve import 'inet.common.packet.chunk.Chunk'
+apps/alert/AlertPacket.msg:20: Error: 'AlertPacket': unknown base class 'inet::FieldsChunk'
+opp_msgtool: error in 1 file(s)
+make[1]: *** [Makefile:439: apps/alert/AlertPacket_m.h] Error 1
+make[1]: Leaving directory '/home/simu5g/workplace2/Simu5G-1.2.2/src'
+make: *** [Makefile:2: all] Error 2
+"make MODE=release all" terminated with exit code 2. Build might be incomplete.
+
+03:59:27 Build Failed. 5 errors, 0 warnings. (took 635ms)
+

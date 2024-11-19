@@ -1,0 +1,17 @@
+[General]
+network = SL_train_topology.TrainTopology
+*.TCU*.numApps = 1
+*.TCU*.app[0].typename = "UdpBasicApp"
+*.TCU*.app[0].packetName = "video"
+*.TCU*.app[0].destAddresses = "CCU1_1"
+*.TCU*.app[0].destPort = 1001
+*.TCU*.app[0].localPort = 1001
+*.TCU*.app[0].messageLength = 50B # 42B = 8B (UDP) + 20B (IP) + 14B (ETH MAC) + 4B (ETH FCS) + 8B (ETH PHY)
+*.TCU*.app[0].sendInterval = 30ms
+*.TCU*.app[0].stopTime = 1s
+*.TCU*.app[0].startTime = 0s
+# server applications
+*.CCU1_1.numApps = 1
+*.CCU1_1.app[0].typename = "UdpSink"
+*.CCU1_1.app[0].display-name = "TCUSink"
+*.CCU1_1.app[0].localPort = 1001

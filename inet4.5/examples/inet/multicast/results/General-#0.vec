@@ -1,0 +1,3962 @@
+version 3
+run General-0-20241119-06:48:17-6748
+attr configname General
+attr datetime 20241119-06:48:17
+attr datetimef 20241119-064817
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsd ""
+attr iterationvarsf ""
+attr measurement ""
+attr network MulticastNetwork
+attr processid 6748
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+config image-path ../../../images
+config network MulticastNetwork
+config total-stack 28MiB
+config **.configurator.config "xmldoc(\"config.xml\")"
+config **.configurator.assignDisjunctSubnetAddresses false
+config **.configurator.addStaticRoutes false
+config **.configurator.addSubnetRoutes false
+config **.configurator.addDefaultRoutes false
+config **.configurator.optimizeRoutes false
+config **.configurator.dumpAddresses true
+config **.configurator.dumpRoutes true
+config **.host*.numApps 1
+config **.app[*].typename UdpBasicApp
+config **.app[0].localPort 100
+config **.app[0].destPort 100
+config **.app[0].messageLength "1250 bytes"
+config **.app[0].sendInterval 0.9s
+config **.app[0].destAddresses "\"172.0.0.1 172.0.0.2 172.0.0.3 172.0.1.1 172.0.2.2       225.0.0.1 225.0.0.2 225.0.0.3 225.0.1.1 225.0.1.2 225.0.2.1\""
+config **.app[0].joinLocalMulticastGroups true
+config **.ppp[*].queue.typename DropTailQueue
+config **.ppp[*].queue.packetCapacity 10
+
+vector 0 MulticastNetwork.host1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 1 MulticastNetwork.host1.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 2 MulticastNetwork.host1.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 3 MulticastNetwork.host1.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 4 MulticastNetwork.host2.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 5 MulticastNetwork.host2.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 6 MulticastNetwork.host2.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 7 MulticastNetwork.host2.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 8 MulticastNetwork.host2.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 9 MulticastNetwork.host3.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 10 MulticastNetwork.host3.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 11 MulticastNetwork.host3.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 12 MulticastNetwork.host3.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 13 MulticastNetwork.host3.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 14 MulticastNetwork.host4.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 15 MulticastNetwork.host4.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 16 MulticastNetwork.host4.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 17 MulticastNetwork.host4.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 18 MulticastNetwork.host5.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 19 MulticastNetwork.host5.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 20 MulticastNetwork.host5.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 21 MulticastNetwork.host5.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 22 MulticastNetwork.host6.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 23 MulticastNetwork.host6.udp passedUpPk:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetSentToUpper
+attr title "packets passed up, count"
+vector 24 MulticastNetwork.host6.udp droppedPkWrongPort:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsNoPortFound(packetDropped)
+attr title "packets dropped (wrong port), count"
+vector 25 MulticastNetwork.host6.udp droppedPkBadChecksum:vector(count) ETV
+attr interpolationmode none
+attr recordingmode vector(count)
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packets dropped (checksum error), count"
+vector 26 MulticastNetwork.router1.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 27 MulticastNetwork.router1.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 28 MulticastNetwork.router1.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 29 MulticastNetwork.router1.ppp[3].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 30 MulticastNetwork.router2.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 31 MulticastNetwork.router2.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 32 MulticastNetwork.router2.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 33 MulticastNetwork.router3.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 34 MulticastNetwork.router3.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 35 MulticastNetwork.router4.ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 36 MulticastNetwork.router4.ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 37 MulticastNetwork.router4.ppp[2].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source transmissionStateChanged
+attr title "tx state"
+vector 38 MulticastNetwork.host1.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 39 MulticastNetwork.host1.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 40 MulticastNetwork.host1.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 41 MulticastNetwork.host1.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 42 MulticastNetwork.host1.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 43 MulticastNetwork.host1.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 44 MulticastNetwork.host1.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 45 MulticastNetwork.host2.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 46 MulticastNetwork.host2.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 47 MulticastNetwork.host2.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 48 MulticastNetwork.host2.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 49 MulticastNetwork.host2.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 50 MulticastNetwork.host2.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 51 MulticastNetwork.host2.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 52 MulticastNetwork.host2.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 53 MulticastNetwork.host2.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 54 MulticastNetwork.host2.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 55 MulticastNetwork.host2.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 56 MulticastNetwork.host2.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 57 MulticastNetwork.host2.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 58 MulticastNetwork.host2.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 59 MulticastNetwork.host3.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 60 MulticastNetwork.host3.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 61 MulticastNetwork.host3.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 62 MulticastNetwork.host3.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 63 MulticastNetwork.host3.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 64 MulticastNetwork.host3.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 65 MulticastNetwork.host3.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 66 MulticastNetwork.host3.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 67 MulticastNetwork.host3.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 68 MulticastNetwork.host3.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 69 MulticastNetwork.host3.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 70 MulticastNetwork.host3.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 71 MulticastNetwork.host3.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 72 MulticastNetwork.host3.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 73 MulticastNetwork.host4.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 74 MulticastNetwork.host4.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 75 MulticastNetwork.host4.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 76 MulticastNetwork.host4.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 77 MulticastNetwork.host4.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 78 MulticastNetwork.host4.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 79 MulticastNetwork.host4.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 80 MulticastNetwork.host5.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 81 MulticastNetwork.host5.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 82 MulticastNetwork.host5.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 83 MulticastNetwork.host5.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 84 MulticastNetwork.host5.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 85 MulticastNetwork.host5.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 86 MulticastNetwork.host5.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 87 MulticastNetwork.host6.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 88 MulticastNetwork.host6.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 89 MulticastNetwork.host6.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 90 MulticastNetwork.host6.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 91 MulticastNetwork.host6.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 92 MulticastNetwork.host6.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 93 MulticastNetwork.host6.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 94 MulticastNetwork.router1.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 95 MulticastNetwork.router1.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 96 MulticastNetwork.router1.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 97 MulticastNetwork.router1.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 98 MulticastNetwork.router1.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 99 MulticastNetwork.router1.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 100 MulticastNetwork.router1.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 101 MulticastNetwork.router1.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 102 MulticastNetwork.router1.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 103 MulticastNetwork.router1.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 104 MulticastNetwork.router1.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 105 MulticastNetwork.router1.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 106 MulticastNetwork.router1.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 107 MulticastNetwork.router1.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 108 MulticastNetwork.router1.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 109 MulticastNetwork.router1.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 110 MulticastNetwork.router1.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 111 MulticastNetwork.router1.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 112 MulticastNetwork.router1.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 113 MulticastNetwork.router1.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 114 MulticastNetwork.router1.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 115 MulticastNetwork.router1.ppp[3].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 116 MulticastNetwork.router1.ppp[3].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 117 MulticastNetwork.router1.ppp[3].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 118 MulticastNetwork.router1.ppp[3].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 119 MulticastNetwork.router1.ppp[3].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 120 MulticastNetwork.router1.ppp[3].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 121 MulticastNetwork.router1.ppp[3].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 122 MulticastNetwork.router2.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 123 MulticastNetwork.router2.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 124 MulticastNetwork.router2.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 125 MulticastNetwork.router2.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 126 MulticastNetwork.router2.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 127 MulticastNetwork.router2.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 128 MulticastNetwork.router2.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 129 MulticastNetwork.router2.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 130 MulticastNetwork.router2.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 131 MulticastNetwork.router2.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 132 MulticastNetwork.router2.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 133 MulticastNetwork.router2.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 134 MulticastNetwork.router2.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 135 MulticastNetwork.router2.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 136 MulticastNetwork.router2.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 137 MulticastNetwork.router2.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 138 MulticastNetwork.router2.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 139 MulticastNetwork.router2.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 140 MulticastNetwork.router2.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 141 MulticastNetwork.router2.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 142 MulticastNetwork.router2.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 143 MulticastNetwork.router3.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 144 MulticastNetwork.router3.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 145 MulticastNetwork.router3.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 146 MulticastNetwork.router3.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 147 MulticastNetwork.router3.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 148 MulticastNetwork.router3.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 149 MulticastNetwork.router3.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 150 MulticastNetwork.router3.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 151 MulticastNetwork.router3.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 152 MulticastNetwork.router3.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 153 MulticastNetwork.router3.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 154 MulticastNetwork.router3.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 155 MulticastNetwork.router3.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 156 MulticastNetwork.router3.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 157 MulticastNetwork.router4.ppp[0].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 158 MulticastNetwork.router4.ppp[0].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 159 MulticastNetwork.router4.ppp[0].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 160 MulticastNetwork.router4.ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 161 MulticastNetwork.router4.ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 162 MulticastNetwork.router4.ppp[0].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 163 MulticastNetwork.router4.ppp[0].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 164 MulticastNetwork.router4.ppp[1].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 165 MulticastNetwork.router4.ppp[1].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 166 MulticastNetwork.router4.ppp[1].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 167 MulticastNetwork.router4.ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 168 MulticastNetwork.router4.ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 169 MulticastNetwork.router4.ppp[1].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 170 MulticastNetwork.router4.ppp[1].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 171 MulticastNetwork.router4.ppp[2].queue incomingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPushStarted)
+attr title "incoming packet lengths"
+attr unit b
+vector 172 MulticastNetwork.router4.ppp[2].queue queueingTime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source queueingTime(packetPulled)
+attr title "queueing times"
+attr unit s
+vector 173 MulticastNetwork.router4.ppp[2].queue outgoingPacketLengths:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source packetLength(packetPulled)
+attr title "outgoing packet lengths"
+attr unit b
+vector 174 MulticastNetwork.router4.ppp[2].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 175 MulticastNetwork.router4.ppp[2].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToLower
+attr title "packets transmitted, packetBytes"
+vector 176 MulticastNetwork.router4.ppp[2].queue queueLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + count(packetPushStarted) - count(packetPulled) - count(packetRemoved) - count(packetDropped)))"
+attr title "queue length"
+attr unit pk
+vector 177 MulticastNetwork.router4.ppp[2].queue queueBitLength:vector ETV
+attr autoWarmupFilter false
+attr interpolationmode sample-hold
+attr recordingmode vector
+attr source "warmup(atomic(constant0(packetPushEnded) + sum(packetLength(packetPushStarted)) - sum(packetLength(packetPulled)) - sum(packetLength(packetRemoved)) - sum(packetLength(packetDropped))))"
+attr title "queue bit length"
+attr unit b
+vector 178 MulticastNetwork.router2.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 179 MulticastNetwork.router2.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 180 MulticastNetwork.router1.ppp[3].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 181 MulticastNetwork.router1.ppp[3].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 182 MulticastNetwork.router3.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 183 MulticastNetwork.router3.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 184 MulticastNetwork.router4.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 185 MulticastNetwork.router4.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 186 MulticastNetwork.router2.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 187 MulticastNetwork.router2.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 188 MulticastNetwork.router2.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 189 MulticastNetwork.router2.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 190 MulticastNetwork.router1.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 191 MulticastNetwork.router1.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 192 MulticastNetwork.host4.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 193 MulticastNetwork.host4.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 194 MulticastNetwork.router3.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 195 MulticastNetwork.router3.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 196 MulticastNetwork.router1.ppp[2].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 197 MulticastNetwork.router1.ppp[2].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 198 MulticastNetwork.host2.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 199 MulticastNetwork.host2.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 200 MulticastNetwork.host1.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 201 MulticastNetwork.host1.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 202 MulticastNetwork.router1.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 203 MulticastNetwork.router1.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 204 MulticastNetwork.host3.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 205 MulticastNetwork.host3.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 206 MulticastNetwork.host5.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 207 MulticastNetwork.host5.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 208 MulticastNetwork.host2.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 209 MulticastNetwork.host2.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 210 MulticastNetwork.host3.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 211 MulticastNetwork.host3.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 212 MulticastNetwork.router4.ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 213 MulticastNetwork.router4.ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 214 MulticastNetwork.router4.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 215 MulticastNetwork.router4.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 216 MulticastNetwork.host6.ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source rxPkOk
+attr title "packets received OK, packetBytes"
+vector 217 MulticastNetwork.host6.ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 218 MulticastNetwork.host1.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 219 MulticastNetwork.host2.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 220 MulticastNetwork.host3.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 221 MulticastNetwork.host4.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 222 MulticastNetwork.host5.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 223 MulticastNetwork.host6.app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 224 MulticastNetwork.host1.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 225 MulticastNetwork.host2.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 226 MulticastNetwork.host3.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 227 MulticastNetwork.host4.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 228 MulticastNetwork.host5.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 229 MulticastNetwork.host6.udp packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSent
+attr title "packets sent, packetBytes"
+vector 230 MulticastNetwork.host1.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 231 MulticastNetwork.host1.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 232 MulticastNetwork.host2.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 233 MulticastNetwork.host2.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 234 MulticastNetwork.host2.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 235 MulticastNetwork.host2.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 236 MulticastNetwork.host3.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 237 MulticastNetwork.host3.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 238 MulticastNetwork.host4.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 239 MulticastNetwork.host4.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 240 MulticastNetwork.host5.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 241 MulticastNetwork.host5.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 242 MulticastNetwork.host5.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 243 MulticastNetwork.host5.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 244 MulticastNetwork.host6.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 245 MulticastNetwork.host6.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 246 MulticastNetwork.host2.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 247 MulticastNetwork.host5.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 248 MulticastNetwork.host5.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 249 MulticastNetwork.host5.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 250 MulticastNetwork.host5.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 251 MulticastNetwork.host5.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 252 MulticastNetwork.router1.ppp[3].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 253 MulticastNetwork.router1.ppp[3].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 254 MulticastNetwork.router2.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 255 MulticastNetwork.router2.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 256 MulticastNetwork.router3.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 257 MulticastNetwork.router3.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 258 MulticastNetwork.router4.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 259 MulticastNetwork.router4.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 260 MulticastNetwork.router2.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 261 MulticastNetwork.router2.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 262 MulticastNetwork.router2.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 263 MulticastNetwork.router2.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 264 MulticastNetwork.router1.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 265 MulticastNetwork.router1.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 266 MulticastNetwork.router3.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 267 MulticastNetwork.router3.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 268 MulticastNetwork.router4.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 269 MulticastNetwork.router4.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 270 MulticastNetwork.host4.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 271 MulticastNetwork.host4.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 272 MulticastNetwork.host4.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 273 MulticastNetwork.host4.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 274 MulticastNetwork.host4.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 275 MulticastNetwork.host3.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 276 MulticastNetwork.host3.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 277 MulticastNetwork.host3.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 278 MulticastNetwork.host3.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 279 MulticastNetwork.host3.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 280 MulticastNetwork.router4.ppp[2].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 281 MulticastNetwork.router4.ppp[2].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 282 MulticastNetwork.host6.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 283 MulticastNetwork.host6.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 284 MulticastNetwork.host6.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 285 MulticastNetwork.host6.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 286 MulticastNetwork.host6.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 287 MulticastNetwork.host1.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 288 MulticastNetwork.host1.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 289 MulticastNetwork.host4.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 290 MulticastNetwork.host4.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 291 MulticastNetwork.host6.lo[0].lo rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, packetBytes"
+vector 292 MulticastNetwork.host6.lo[0].lo passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetSentToUpper
+attr title "packets passed to higher layer, packetBytes"
+vector 293 MulticastNetwork.host1.udp packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 294 MulticastNetwork.host1.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 295 MulticastNetwork.host1.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 296 MulticastNetwork.host1.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 297 MulticastNetwork.host1.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 298 MulticastNetwork.router1.ppp[0].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 299 MulticastNetwork.router1.ppp[0].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 300 MulticastNetwork.router1.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 301 MulticastNetwork.router1.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 302 MulticastNetwork.host2.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 303 MulticastNetwork.host2.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 304 MulticastNetwork.host2.app[0] packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetReceived
+attr title "packets received, packetBytes"
+vector 305 MulticastNetwork.host2.app[0] throughput:vector ETV
+attr recordingmode vector
+attr source throughput(packetReceived)
+attr title throughput
+attr unit bps
+vector 306 MulticastNetwork.host2.app[0] rcvdPkLifetime:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source dataAge(packetReceived)
+attr title "received packet lifetime"
+attr unit s
+vector 307 MulticastNetwork.host2.app[0] rcvdPkSeqNo:vector ETV
+attr interpolationmode none
+attr recordingmode vector
+attr source appPkSeqNo(packetReceived)
+attr title "received packet sequence number"
+vector 308 MulticastNetwork.host3.ppp[1].queue incomingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPushStarted)
+attr title "incoming datarate"
+attr unit bps
+vector 309 MulticastNetwork.host3.ppp[1].queue outgoingDataRate:vector ETV
+attr interpolationmode linear
+attr recordingmode vector
+attr source throughput(packetPulled)
+attr title "outgoing datarate"
+attr unit bps
+vector 310 MulticastNetwork.host2.ipv4.ip packetDropUndefined:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, packetBytes"
+vector 311 MulticastNetwork.host3.ipv4.ip packetDropUndefined:vector(packetBytes) ETV
+attr interpolationmode none
+attr recordingmode vector(packetBytes)
+attr source packetDropReasonIsUndefined(packetDropped)
+attr title "packet drop: undefined, packetBytes"
+0	0	0	0
+0	35	0	1
+0	97	0.0000312	0
+0	97	0.0000312	1
+0	101	0.0000624	0
+0	101	0.0000624	1
+0	105	0.0000936	0
+0	235	0.9	1
+0	248	0.901028	0
+1	0	0	0
+1	432	1.8	1
+1	482	1.802424292421	2
+1	492	1.803452292421	3
+2	0	0	0
+3	0	0	0
+4	0	0	0
+4	38	0	1
+4	98	0.0000312	0
+4	98	0.0000312	1
+4	102	0.0000624	0
+4	102	0.0000624	1
+4	106	0.0000936	0
+4	106	0.0000936	1
+4	109	0.0001216	0
+4	237	0.9	1
+4	249	0.901028	0
+4	420	1.8	1
+4	437	1.801028	0
+5	0	0	0
+5	42	0	1
+5	165	0.004375	0
+5	478	1.802416047717	1
+5	519	1.963041047717	0
+6	0	0	0
+6	477	1.802416047717	1
+7	0	0	0
+7	245	0.9	1
+8	0	0	0
+9	0	0	0
+9	43	0	1
+9	99	0.0000312	0
+9	99	0.0000312	1
+9	103	0.0000624	0
+9	103	0.0000624	1
+9	107	0.0000936	0
+9	107	0.0000936	1
+9	110	0.0001216	0
+9	238	0.9	1
+9	250	0.901028	0
+9	379	1.182744237594	1
+9	380	1.182775437594	0
+9	421	1.8	1
+9	438	1.801028	0
+10	0	0	0
+10	47	0	1
+10	166	0.004375	0
+10	487	1.802478869823	1
+10	520	1.963103869823	0
+11	0	0	0
+11	316	0.902478869823	1
+11	355	1.06412784067	2
+11	486	1.802478869823	3
+12	0	0	0
+13	0	0	0
+14	0	0	0
+14	48	0	1
+14	100	0.0000312	0
+14	100	0.0000312	1
+14	104	0.0000624	0
+14	104	0.0000624	1
+14	108	0.0000936	0
+14	239	0.9	1
+14	251	0.901028	0
+14	423	1.8	1
+14	439	1.801028	0
+15	0	0	0
+15	312	0.902333642802	1
+15	527	1.963980340731	2
+16	0	0	0
+16	433	1.8	1
+17	0	0	0
+18	0	0	0
+18	51	0	1
+18	169	0.004875	0
+18	169	0.004875	1
+18	183	0.00975	0
+18	183	0.00975	1
+18	194	0.014625	0
+18	241	0.9	1
+18	327	1.060625	0
+18	396	1.433532855008	1
+18	397	1.438407855008	0
+18	425	1.8	1
+18	497	1.960625	0
+19	0	0	0
+19	246	0.9	1
+19	365	1.067064325115	2
+20	0	0	0
+20	434	1.8	1
+21	0	0	0
+22	0	0	0
+22	54	0	1
+22	170	0.004875	0
+22	170	0.004875	1
+22	184	0.00975	0
+22	184	0.00975	1
+22	195	0.014625	0
+22	242	0.9	1
+22	328	1.060625	0
+22	328	1.060625	1
+22	359	1.0655	0
+22	427	1.8	1
+22	498	1.960625	0
+23	0	0	0
+23	372	1.071272677151	1
+23	387	1.235272677151	2
+23	392	1.395897677151	3
+24	0	0	0
+24	435	1.8	1
+25	0	0	0
+26	0	0	0
+26	57	0	1
+26	93	0.000028	0
+26	462	1.801202053382	1
+26	472	1.802230053382	0
+26	472	1.802230053382	1
+26	489	1.803258053382	0
+27	0	0	0
+27	58	0	1
+27	94	0.000028	0
+27	463	1.801202053382	1
+27	473	1.802230053382	0
+28	0	0	0
+28	59	0	1
+28	95	0.000028	0
+28	285	0.901202053382	1
+28	308	0.902230053382	0
+28	344	1.062829424229	1
+28	349	1.063471824229	0
+28	349	1.063471824229	1
+28	352	1.063879024229	0
+28	464	1.801202053382	1
+28	474	1.802230053382	0
+29	0	0	0
+29	60	0	1
+29	69	0.000000546875	0
+29	254	0.901125350491	1
+29	255	0.901145428616	0
+29	269	0.90116221558	1
+29	278	0.901182293705	0
+29	292	0.901220628534	1
+29	293	0.901240706659	0
+29	445	1.80116221558	1
+29	450	1.801182293705	0
+30	0	0	0
+30	61	0	1
+30	70	0.000000546875	0
+30	277	0.901180995294	1
+30	282	0.901201073419	0
+30	336	1.062815897391	1
+30	341	1.062828444266	0
+30	341	1.062828444266	1
+30	345	1.062836397391	0
+30	449	1.801180995294	1
+30	459	1.801201073419	0
+30	541	1.965852732101	1
+31	0	0	0
+31	62	0	1
+31	71	0.000000546875	0
+31	281	0.901183268212	1
+31	286	0.901203346337	0
+31	506	1.962815897391	1
+31	511	1.962828444266	0
+31	511	1.962828444266	1
+31	515	1.962836397391	0
+32	0	0	0
+32	63	0	1
+32	72	0.000000546875	0
+32	258	0.901146403123	1
+32	260	0.901158949998	0
+32	260	0.901158949998	1
+32	270	0.901166903123	0
+32	296	0.901241681166	1
+32	298	0.901254228041	0
+32	298	0.901254228041	1
+32	303	0.901262181166	0
+32	453	1.801183268212	1
+32	455	1.801195815087	0
+32	455	1.801195815087	1
+32	465	1.801203768212	0
+33	0	0	0
+33	64	0	1
+33	96	0.000028	0
+33	289	0.901204332665	1
+33	309	0.902232332665	0
+33	514	1.962829430594	1
+33	521	1.963471830594	0
+33	521	1.963471830594	1
+33	524	1.963879030594	0
+34	0	0	0
+34	65	0	1
+34	73	0.000000546875	0
+34	263	0.901159734903	1
+34	274	0.901179813028	0
+34	442	1.801159734903	1
+34	446	1.801179813028	0
+35	0	0	0
+35	66	0	1
+35	167	0.004375	0
+35	301	0.901255338364	1
+35	319	1.001630338364	0
+35	319	1.001630338364	1
+35	358	1.065255338364	0
+36	0	0	0
+36	67	0	1
+36	168	0.004375	0
+36	266	0.901160060321	1
+36	318	1.001535060321	0
+36	318	1.001535060321	1
+36	357	1.065160060321	0
+36	357	1.065160060321	1
+36	374	1.165535060321	0
+36	374	1.165535060321	1
+36	384	1.229160060321	0
+36	384	1.229160060321	1
+36	389	1.389785060321	0
+36	458	1.80119692541	1
+36	494	1.90157192541	0
+36	494	1.90157192541	1
+36	531	1.96519692541	0
+37	0	0	0
+37	68	0	1
+37	74	0.000000546875	0
+37	331	1.062802212153	1
+37	333	1.062814759028	0
+37	333	1.062814759028	1
+37	337	1.062822712153	0
+37	501	1.962802212153	1
+37	503	1.962814759028	0
+37	503	1.962814759028	1
+37	507	1.962822712153	0
+37	536	1.965839046863	1
+37	538	1.965851593738	0
+37	538	1.965851593738	1
+38	35	0	256
+38	36	0	256
+38	37	0	256
+38	235	0.9	10224
+39	35	0	0
+39	97	0.0000312	3.12e-05
+39	101	0.0000624	6.24e-05
+39	235	0.9	0
+40	35	0	256
+40	97	0.0000312	256
+40	101	0.0000624	256
+40	235	0.9	10224
+41	35	0	32
+41	97	0.0000312	32
+41	101	0.0000624	32
+41	235	0.9	1278
+42	35	0	39
+42	97	0.0000312	39
+42	101	0.0000624	39
+42	235	0.9	1285
+43	35	0	0
+43	36	0	1
+43	37	0	2
+43	97	0.0000312	1
+43	101	0.0000624	0
+43	235	0.9	0
+44	35	0	0
+44	36	0	256
+44	37	0	512
+44	97	0.0000312	256
+44	101	0.0000624	0
+44	235	0.9	0
+45	38	0	256
+45	39	0	256
+45	40	0	256
+45	41	0	224
+45	237	0.9	10224
+45	420	1.8	10224
+46	38	0	0
+46	98	0.0000312	3.12e-05
+46	102	0.0000624	6.24e-05
+46	106	0.0000936	9.36e-05
+46	237	0.9	0
+46	420	1.8	0
+47	38	0	256
+47	98	0.0000312	256
+47	102	0.0000624	256
+47	106	0.0000936	224
+47	237	0.9	10224
+47	420	1.8	10224
+48	38	0	32
+48	98	0.0000312	32
+48	102	0.0000624	32
+48	106	0.0000936	28
+48	237	0.9	1278
+48	420	1.8	1278
+49	38	0	39
+49	98	0.0000312	39
+49	102	0.0000624	39
+49	106	0.0000936	35
+49	237	0.9	1285
+49	420	1.8	1285
+50	38	0	0
+50	39	0	1
+50	40	0	2
+50	41	0	3
+50	98	0.0000312	2
+50	102	0.0000624	1
+50	106	0.0000936	0
+50	237	0.9	0
+50	420	1.8	0
+51	38	0	0
+51	39	0	256
+51	40	0	512
+51	41	0	736
+51	98	0.0000312	480
+51	102	0.0000624	224
+51	106	0.0000936	0
+51	237	0.9	0
+51	420	1.8	0
+52	42	0	224
+52	478	1.802416047717	10224
+53	42	0	0
+53	478	1.802416047717	0
+54	42	0	224
+54	478	1.802416047717	10224
+55	42	0	28
+55	478	1.802416047717	1278
+56	42	0	35
+56	478	1.802416047717	1285
+57	42	0	0
+57	478	1.802416047717	0
+58	42	0	0
+58	478	1.802416047717	0
+59	43	0	256
+59	44	0	256
+59	45	0	256
+59	46	0	224
+59	238	0.9	10224
+59	379	1.182744237594	256
+59	421	1.8	10224
+60	43	0	0
+60	99	0.0000312	3.12e-05
+60	103	0.0000624	6.24e-05
+60	107	0.0000936	9.36e-05
+60	238	0.9	0
+60	379	1.182744237594	0
+60	421	1.8	0
+61	43	0	256
+61	99	0.0000312	256
+61	103	0.0000624	256
+61	107	0.0000936	224
+61	238	0.9	10224
+61	379	1.182744237594	256
+61	421	1.8	10224
+62	43	0	32
+62	99	0.0000312	32
+62	103	0.0000624	32
+62	107	0.0000936	28
+62	238	0.9	1278
+62	379	1.182744237594	32
+62	421	1.8	1278
+63	43	0	39
+63	99	0.0000312	39
+63	103	0.0000624	39
+63	107	0.0000936	35
+63	238	0.9	1285
+63	379	1.182744237594	39
+63	421	1.8	1285
+64	43	0	0
+64	44	0	1
+64	45	0	2
+64	46	0	3
+64	99	0.0000312	2
+64	103	0.0000624	1
+64	107	0.0000936	0
+64	238	0.9	0
+64	379	1.182744237594	0
+64	421	1.8	0
+65	43	0	0
+65	44	0	256
+65	45	0	512
+65	46	0	736
+65	99	0.0000312	480
+65	103	0.0000624	224
+65	107	0.0000936	0
+65	238	0.9	0
+65	379	1.182744237594	0
+65	421	1.8	0
+66	47	0	224
+66	487	1.802478869823	10224
+67	47	0	0
+67	487	1.802478869823	0
+68	47	0	224
+68	487	1.802478869823	10224
+69	47	0	28
+69	487	1.802478869823	1278
+70	47	0	35
+70	487	1.802478869823	1285
+71	47	0	0
+71	487	1.802478869823	0
+72	47	0	0
+72	487	1.802478869823	0
+73	48	0	256
+73	49	0	256
+73	50	0	256
+73	239	0.9	10224
+73	423	1.8	10224
+74	48	0	0
+74	100	0.0000312	3.12e-05
+74	104	0.0000624	6.24e-05
+74	239	0.9	0
+74	423	1.8	0
+75	48	0	256
+75	100	0.0000312	256
+75	104	0.0000624	256
+75	239	0.9	10224
+75	423	1.8	10224
+76	48	0	32
+76	100	0.0000312	32
+76	104	0.0000624	32
+76	239	0.9	1278
+76	423	1.8	1278
+77	48	0	39
+77	100	0.0000312	39
+77	104	0.0000624	39
+77	239	0.9	1285
+77	423	1.8	1285
+78	48	0	0
+78	49	0	1
+78	50	0	2
+78	100	0.0000312	1
+78	104	0.0000624	0
+78	239	0.9	0
+78	423	1.8	0
+79	48	0	0
+79	49	0	256
+79	50	0	512
+79	100	0.0000312	256
+79	104	0.0000624	0
+79	239	0.9	0
+79	423	1.8	0
+80	51	0	256
+80	52	0	256
+80	53	0	256
+80	241	0.9	10224
+80	396	1.433532855008	256
+80	425	1.8	10224
+81	51	0	0
+81	169	0.004875	0.004875
+81	183	0.00975	0.00975
+81	241	0.9	0
+81	396	1.433532855008	0
+81	425	1.8	0
+82	51	0	256
+82	169	0.004875	256
+82	183	0.00975	256
+82	241	0.9	10224
+82	396	1.433532855008	256
+82	425	1.8	10224
+83	51	0	32
+83	169	0.004875	32
+83	183	0.00975	32
+83	241	0.9	1278
+83	396	1.433532855008	32
+83	425	1.8	1278
+84	51	0	39
+84	169	0.004875	39
+84	183	0.00975	39
+84	241	0.9	1285
+84	396	1.433532855008	39
+84	425	1.8	1285
+85	51	0	0
+85	52	0	1
+85	53	0	2
+85	169	0.004875	1
+85	183	0.00975	0
+85	241	0.9	0
+85	396	1.433532855008	0
+85	425	1.8	0
+86	51	0	0
+86	52	0	256
+86	53	0	512
+86	169	0.004875	256
+86	183	0.00975	0
+86	241	0.9	0
+86	396	1.433532855008	0
+86	425	1.8	0
+87	54	0	256
+87	55	0	256
+87	56	0	256
+87	242	0.9	10224
+87	326	1.059076064266	256
+87	427	1.8	10224
+88	54	0	0
+88	170	0.004875	0.004875
+88	184	0.00975	0.00975
+88	242	0.9	0
+88	328	1.060625	0.001548935734
+88	427	1.8	0
+89	54	0	256
+89	170	0.004875	256
+89	184	0.00975	256
+89	242	0.9	10224
+89	328	1.060625	256
+89	427	1.8	10224
+90	54	0	32
+90	170	0.004875	32
+90	184	0.00975	32
+90	242	0.9	1278
+90	328	1.060625	32
+90	427	1.8	1278
+91	54	0	39
+91	170	0.004875	39
+91	184	0.00975	39
+91	242	0.9	1285
+91	328	1.060625	39
+91	427	1.8	1285
+92	54	0	0
+92	55	0	1
+92	56	0	2
+92	170	0.004875	1
+92	184	0.00975	0
+92	242	0.9	0
+92	326	1.059076064266	1
+92	328	1.060625	0
+92	427	1.8	0
+93	54	0	0
+93	55	0	256
+93	56	0	512
+93	170	0.004875	256
+93	184	0.00975	0
+93	242	0.9	0
+93	326	1.059076064266	256
+93	328	1.060625	0
+93	427	1.8	0
+94	57	0	224
+94	462	1.801202053382	10224
+94	471	1.801220628534	10224
+95	57	0	0
+95	462	1.801202053382	0
+95	472	1.802230053382	0.001009424848
+96	57	0	224
+96	462	1.801202053382	10224
+96	472	1.802230053382	10224
+97	57	0	28
+97	462	1.801202053382	1278
+97	472	1.802230053382	1278
+98	57	0	35
+98	462	1.801202053382	1285
+98	472	1.802230053382	1285
+99	57	0	0
+99	462	1.801202053382	0
+99	471	1.801220628534	1
+99	472	1.802230053382	0
+100	57	0	0
+100	462	1.801202053382	0
+100	471	1.801220628534	10224
+100	472	1.802230053382	0
+101	58	0	224
+101	463	1.801202053382	10224
+102	58	0	0
+102	463	1.801202053382	0
+103	58	0	224
+103	463	1.801202053382	10224
+104	58	0	28
+104	463	1.801202053382	1278
+105	58	0	35
+105	463	1.801202053382	1285
+106	58	0	0
+106	463	1.801202053382	0
+107	58	0	0
+107	463	1.801202053382	0
+108	59	0	224
+108	285	0.901202053382	10224
+108	344	1.062829424229	6368
+108	348	1.062837377354	4016
+108	464	1.801202053382	10224
+109	59	0	0
+109	285	0.901202053382	0
+109	344	1.062829424229	0
+109	349	1.063471824229	0.000634446875
+109	464	1.801202053382	0
+110	59	0	224
+110	285	0.901202053382	10224
+110	344	1.062829424229	6368
+110	349	1.063471824229	4016
+110	464	1.801202053382	10224
+111	59	0	28
+111	285	0.901202053382	1278
+111	344	1.062829424229	796
+111	349	1.063471824229	502
+111	464	1.801202053382	1278
+112	59	0	35
+112	285	0.901202053382	1285
+112	344	1.062829424229	803
+112	349	1.063471824229	509
+112	464	1.801202053382	1285
+113	59	0	0
+113	285	0.901202053382	0
+113	344	1.062829424229	0
+113	348	1.062837377354	1
+113	349	1.063471824229	0
+113	464	1.801202053382	0
+114	59	0	0
+114	285	0.901202053382	0
+114	344	1.062829424229	0
+114	348	1.062837377354	4016
+114	349	1.063471824229	0
+114	464	1.801202053382	0
+115	60	0	224
+115	254	0.901125350491	10224
+115	269	0.90116221558	10224
+115	292	0.901220628534	10224
+115	445	1.80116221558	10224
+116	60	0	0
+116	254	0.901125350491	0
+116	269	0.90116221558	0
+116	292	0.901220628534	0
+116	445	1.80116221558	0
+117	60	0	224
+117	254	0.901125350491	10224
+117	269	0.90116221558	10224
+117	292	0.901220628534	10224
+117	445	1.80116221558	10224
+118	60	0	28
+118	254	0.901125350491	1278
+118	269	0.90116221558	1278
+118	292	0.901220628534	1278
+118	445	1.80116221558	1278
+119	60	0	35
+119	254	0.901125350491	1285
+119	269	0.90116221558	1285
+119	292	0.901220628534	1285
+119	445	1.80116221558	1285
+120	60	0	0
+120	254	0.901125350491	0
+120	269	0.90116221558	0
+120	292	0.901220628534	0
+120	445	1.80116221558	0
+121	60	0	0
+121	254	0.901125350491	0
+121	269	0.90116221558	0
+121	292	0.901220628534	0
+121	445	1.80116221558	0
+122	61	0	224
+122	277	0.901180995294	10224
+122	336	1.062815897391	6368
+122	340	1.062823850516	4016
+122	449	1.801180995294	10224
+122	541	1.965852732101	6368
+123	61	0	0
+123	277	0.901180995294	0
+123	336	1.062815897391	0
+123	341	1.062828444266	4.59375e-06
+123	449	1.801180995294	0
+123	541	1.965852732101	0
+124	61	0	224
+124	277	0.901180995294	10224
+124	336	1.062815897391	6368
+124	341	1.062828444266	4016
+124	449	1.801180995294	10224
+124	541	1.965852732101	6368
+125	61	0	28
+125	277	0.901180995294	1278
+125	336	1.062815897391	796
+125	341	1.062828444266	502
+125	449	1.801180995294	1278
+125	541	1.965852732101	796
+126	61	0	35
+126	277	0.901180995294	1285
+126	336	1.062815897391	803
+126	341	1.062828444266	509
+126	449	1.801180995294	1285
+126	541	1.965852732101	803
+127	61	0	0
+127	277	0.901180995294	0
+127	336	1.062815897391	0
+127	340	1.062823850516	1
+127	341	1.062828444266	0
+127	449	1.801180995294	0
+127	541	1.965852732101	0
+128	61	0	0
+128	277	0.901180995294	0
+128	336	1.062815897391	0
+128	340	1.062823850516	4016
+128	341	1.062828444266	0
+128	449	1.801180995294	0
+128	541	1.965852732101	0
+129	62	0	224
+129	281	0.901183268212	10224
+129	506	1.962815897391	6368
+129	510	1.962823850516	4016
+130	62	0	0
+130	281	0.901183268212	0
+130	506	1.962815897391	0
+130	511	1.962828444266	4.59375e-06
+131	62	0	224
+131	281	0.901183268212	10224
+131	506	1.962815897391	6368
+131	511	1.962828444266	4016
+132	62	0	28
+132	281	0.901183268212	1278
+132	506	1.962815897391	796
+132	511	1.962828444266	502
+133	62	0	35
+133	281	0.901183268212	1285
+133	506	1.962815897391	803
+133	511	1.962828444266	509
+134	62	0	0
+134	281	0.901183268212	0
+134	506	1.962815897391	0
+134	510	1.962823850516	1
+134	511	1.962828444266	0
+135	62	0	0
+135	281	0.901183268212	0
+135	506	1.962815897391	0
+135	510	1.962823850516	4016
+135	511	1.962828444266	0
+136	63	0	224
+136	258	0.901146403123	6368
+136	259	0.901146403123	4016
+136	296	0.901241681166	6368
+136	297	0.901241681166	4016
+136	453	1.801183268212	6368
+136	454	1.801183268212	4016
+137	63	0	0
+137	258	0.901146403123	0
+137	260	0.901158949998	1.2546875e-05
+137	296	0.901241681166	0
+137	298	0.901254228041	1.2546875e-05
+137	453	1.801183268212	0
+137	455	1.801195815087	1.2546875e-05
+138	63	0	224
+138	258	0.901146403123	6368
+138	260	0.901158949998	4016
+138	296	0.901241681166	6368
+138	298	0.901254228041	4016
+138	453	1.801183268212	6368
+138	455	1.801195815087	4016
+139	63	0	28
+139	258	0.901146403123	796
+139	260	0.901158949998	502
+139	296	0.901241681166	796
+139	298	0.901254228041	502
+139	453	1.801183268212	796
+139	455	1.801195815087	502
+140	63	0	35
+140	258	0.901146403123	803
+140	260	0.901158949998	509
+140	296	0.901241681166	803
+140	298	0.901254228041	509
+140	453	1.801183268212	803
+140	455	1.801195815087	509
+141	63	0	0
+141	258	0.901146403123	0
+141	259	0.901146403123	1
+141	260	0.901158949998	0
+141	296	0.901241681166	0
+141	297	0.901241681166	1
+141	298	0.901254228041	0
+141	453	1.801183268212	0
+141	454	1.801183268212	1
+141	455	1.801195815087	0
+142	63	0	0
+142	258	0.901146403123	0
+142	259	0.901146403123	4016
+142	260	0.901158949998	0
+142	296	0.901241681166	0
+142	297	0.901241681166	4016
+142	298	0.901254228041	0
+142	453	1.801183268212	0
+142	454	1.801183268212	4016
+142	455	1.801195815087	0
+143	64	0	224
+143	289	0.901204332665	10224
+143	514	1.962829430594	6368
+143	518	1.962837383719	4016
+144	64	0	0
+144	289	0.901204332665	0
+144	514	1.962829430594	0
+144	521	1.963471830594	0.000634446875
+145	64	0	224
+145	289	0.901204332665	10224
+145	514	1.962829430594	6368
+145	521	1.963471830594	4016
+146	64	0	28
+146	289	0.901204332665	1278
+146	514	1.962829430594	796
+146	521	1.963471830594	502
+147	64	0	35
+147	289	0.901204332665	1285
+147	514	1.962829430594	803
+147	521	1.963471830594	509
+148	64	0	0
+148	289	0.901204332665	0
+148	514	1.962829430594	0
+148	518	1.962837383719	1
+148	521	1.963471830594	0
+149	64	0	0
+149	289	0.901204332665	0
+149	514	1.962829430594	0
+149	518	1.962837383719	4016
+149	521	1.963471830594	0
+150	65	0	224
+150	263	0.901159734903	10224
+150	442	1.801159734903	10224
+151	65	0	0
+151	263	0.901159734903	0
+151	442	1.801159734903	0
+152	65	0	224
+152	263	0.901159734903	10224
+152	442	1.801159734903	10224
+153	65	0	28
+153	263	0.901159734903	1278
+153	442	1.801159734903	1278
+154	65	0	35
+154	263	0.901159734903	1285
+154	442	1.801159734903	1285
+155	65	0	0
+155	263	0.901159734903	0
+155	442	1.801159734903	0
+156	65	0	0
+156	263	0.901159734903	0
+156	442	1.801159734903	0
+157	66	0	224
+157	301	0.901255338364	6368
+157	306	0.901263291489	4016
+158	66	0	0
+158	301	0.901255338364	0
+158	319	1.001630338364	0.100367046875
+159	66	0	224
+159	301	0.901255338364	6368
+159	319	1.001630338364	4016
+160	66	0	28
+160	301	0.901255338364	796
+160	319	1.001630338364	502
+161	66	0	35
+161	301	0.901255338364	803
+161	319	1.001630338364	509
+162	66	0	0
+162	301	0.901255338364	0
+162	306	0.901263291489	1
+162	319	1.001630338364	0
+163	66	0	0
+163	301	0.901255338364	0
+163	306	0.901263291489	4016
+163	319	1.001630338364	0
+164	67	0	224
+164	266	0.901160060321	6368
+164	273	0.901168013446	4016
+164	302	0.901255338364	6368
+164	307	0.901263291489	4016
+164	362	1.065839046863	10224
+164	458	1.80119692541	6368
+164	468	1.801204878535	4016
+165	67	0	0
+165	266	0.901160060321	0
+165	318	1.001535060321	0.100367046875
+165	357	1.065160060321	0.163904721957
+165	374	1.165535060321	0.264271768832
+165	384	1.229160060321	0.163321013458
+165	458	1.80119692541	0
+165	494	1.90157192541	0.100367046875
+166	67	0	224
+166	266	0.901160060321	6368
+166	318	1.001535060321	4016
+166	357	1.065160060321	6368
+166	374	1.165535060321	4016
+166	384	1.229160060321	10224
+166	458	1.80119692541	6368
+166	494	1.90157192541	4016
+167	67	0	28
+167	266	0.901160060321	796
+167	318	1.001535060321	502
+167	357	1.065160060321	796
+167	374	1.165535060321	502
+167	384	1.229160060321	1278
+167	458	1.80119692541	796
+167	494	1.90157192541	502
+168	67	0	35
+168	266	0.901160060321	803
+168	318	1.001535060321	509
+168	357	1.065160060321	803
+168	374	1.165535060321	509
+168	384	1.229160060321	1285
+168	458	1.80119692541	803
+168	494	1.90157192541	509
+169	67	0	0
+169	266	0.901160060321	0
+169	273	0.901168013446	1
+169	302	0.901255338364	2
+169	307	0.901263291489	3
+169	318	1.001535060321	2
+169	357	1.065160060321	1
+169	362	1.065839046863	2
+169	374	1.165535060321	1
+169	384	1.229160060321	0
+169	458	1.80119692541	0
+169	468	1.801204878535	1
+169	494	1.90157192541	0
+170	67	0	0
+170	266	0.901160060321	0
+170	273	0.901168013446	4016
+170	302	0.901255338364	10384
+170	307	0.901263291489	14400
+170	318	1.001535060321	10384
+170	357	1.065160060321	4016
+170	362	1.065839046863	14240
+170	374	1.165535060321	10224
+170	384	1.229160060321	0
+170	458	1.80119692541	0
+170	468	1.801204878535	4016
+170	494	1.90157192541	0
+171	68	0	224
+171	331	1.062802212153	6368
+171	332	1.062802212153	4016
+171	501	1.962802212153	6368
+171	502	1.962802212153	4016
+171	536	1.965839046863	6368
+171	537	1.965839046863	4016
+172	68	0	0
+172	331	1.062802212153	0
+172	333	1.062814759028	1.2546875e-05
+172	501	1.962802212153	0
+172	503	1.962814759028	1.2546875e-05
+172	536	1.965839046863	0
+172	538	1.965851593738	1.2546875e-05
+173	68	0	224
+173	331	1.062802212153	6368
+173	333	1.062814759028	4016
+173	501	1.962802212153	6368
+173	503	1.962814759028	4016
+173	536	1.965839046863	6368
+173	538	1.965851593738	4016
+174	68	0	28
+174	331	1.062802212153	796
+174	333	1.062814759028	502
+174	501	1.962802212153	796
+174	503	1.962814759028	502
+174	536	1.965839046863	796
+174	538	1.965851593738	502
+175	68	0	35
+175	331	1.062802212153	803
+175	333	1.062814759028	509
+175	501	1.962802212153	803
+175	503	1.962814759028	509
+175	536	1.965839046863	803
+175	538	1.965851593738	509
+176	68	0	0
+176	331	1.062802212153	0
+176	332	1.062802212153	1
+176	333	1.062814759028	0
+176	501	1.962802212153	0
+176	502	1.962802212153	1
+176	503	1.962814759028	0
+176	536	1.965839046863	0
+176	537	1.965839046863	1
+176	538	1.965851593738	0
+177	68	0	0
+177	331	1.062802212153	0
+177	332	1.062802212153	4016
+177	333	1.062814759028	0
+177	501	1.962802212153	0
+177	502	1.962802212153	4016
+177	503	1.962814759028	0
+177	536	1.965839046863	0
+177	537	1.965839046863	4016
+177	538	1.965851593738	0
+178	75	0.000001521382	35
+178	256	0.901146403123	1285
+178	279	0.901183268212	1285
+178	294	0.901241681166	1285
+178	451	1.801183268212	1285
+179	75	0.000001521382	28
+179	256	0.901146403123	1278
+179	279	0.901183268212	1278
+179	294	0.901241681166	1278
+179	451	1.801183268212	1278
+180	78	0.000001526838	35
+180	283	0.901202053382	1285
+180	342	1.062829424229	803
+180	346	1.062837377354	509
+180	460	1.801202053382	1285
+181	78	0.000001526838	28
+181	283	0.901202053382	1278
+181	342	1.062829424229	796
+181	346	1.062837377354	502
+181	460	1.801202053382	1278
+182	81	0.000001533203	35
+182	287	0.901204332665	1285
+182	512	1.962829430594	803
+182	516	1.962837383719	509
+183	81	0.000001533203	28
+183	287	0.901204332665	1278
+183	512	1.962829430594	796
+183	516	1.962837383719	502
+184	84	0.000001657198	35
+184	264	0.901160060321	803
+184	271	0.901168013446	509
+184	299	0.901255338364	803
+184	304	0.901263291489	509
+184	456	1.80119692541	803
+184	466	1.801204878535	509
+185	84	0.000001657198	28
+185	264	0.901160060321	796
+185	271	0.901168013446	502
+185	299	0.901255338364	796
+185	304	0.901263291489	502
+185	456	1.80119692541	796
+185	466	1.801204878535	502
+186	87	0.000001685238	35
+186	334	1.062815897391	803
+186	338	1.062823850516	509
+186	504	1.962815897391	803
+186	508	1.962823850516	509
+186	539	1.965852732101	803
+187	87	0.000001685238	28
+187	334	1.062815897391	796
+187	338	1.062823850516	502
+187	504	1.962815897391	796
+187	508	1.962823850516	502
+187	539	1.965852732101	796
+188	90	0.000001729141	35
+188	275	0.901180995294	1285
+188	447	1.801180995294	1285
+189	90	0.000001729141	28
+189	275	0.901180995294	1278
+189	447	1.801180995294	1278
+190	111	0.000128550491	39
+190	117	0.000159750491	39
+190	126	0.000190950491	39
+190	252	0.901125350491	1285
+191	111	0.000128550491	32
+191	117	0.000159750491	32
+191	126	0.000190950491	32
+191	252	0.901125350491	1278
+192	114	0.000129310137	35
+192	310	0.902333642802	1285
+192	522	1.963573140731	803
+192	525	1.963980340731	509
+193	114	0.000129310137	28
+193	310	0.902333642802	1278
+193	522	1.963573140731	796
+193	525	1.963980340731	502
+194	120	0.000162934903	39
+194	129	0.000194134903	39
+194	144	0.000225334903	39
+194	261	0.901159734903	1285
+194	440	1.801159734903	1285
+195	120	0.000162934903	32
+195	129	0.000194134903	32
+195	144	0.000225334903	32
+195	261	0.901159734903	1278
+195	440	1.801159734903	1278
+196	123	0.00016541558	39
+196	132	0.00019661558	39
+196	147	0.00022781558	39
+196	153	0.00025581558	35
+196	267	0.90116221558	1285
+196	381	1.182909653174	39
+196	443	1.80116221558	1285
+197	123	0.00016541558	32
+197	132	0.00019661558	32
+197	147	0.00022781558	32
+197	153	0.00025581558	28
+197	267	0.90116221558	1278
+197	381	1.182909653174	32
+197	443	1.80116221558	1278
+198	135	0.000213994335	35
+198	475	1.802416047717	1285
+199	135	0.000213994335	28
+199	475	1.802416047717	1278
+200	138	0.000222239039	35
+200	480	1.802424292421	1285
+200	490	1.803452292421	1285
+201	138	0.000222239039	28
+201	480	1.802424292421	1278
+201	490	1.803452292421	1278
+202	141	0.000223828534	39
+202	150	0.000255028534	39
+202	159	0.000286228534	39
+202	162	0.000314228534	35
+202	290	0.901220628534	1285
+202	469	1.801220628534	1285
+203	141	0.000223828534	32
+203	150	0.000255028534	32
+203	159	0.000286228534	32
+203	162	0.000314228534	28
+203	290	0.901220628534	1278
+203	469	1.801220628534	1278
+204	156	0.000276816441	35
+204	314	0.902478869823	1285
+204	350	1.06372064067	803
+204	353	1.06412784067	509
+204	484	1.802478869823	1285
+205	156	0.000276816441	28
+205	314	0.902478869823	1278
+205	350	1.06372064067	796
+205	353	1.06412784067	502
+205	484	1.802478869823	1278
+206	171	0.006183986751	35
+206	320	1.003439325115	803
+206	363	1.067064325115	509
+207	171	0.006183986751	28
+207	320	1.003439325115	796
+207	363	1.067064325115	502
+208	174	0.006436116107	35
+208	529	1.96516498593	1285
+209	174	0.006436116107	28
+209	529	1.96516498593	1278
+210	177	0.007026808545	35
+210	532	1.965692856262	1285
+211	177	0.007026808545	28
+211	532	1.965692856262	1278
+212	180	0.007052212153	39
+212	191	0.011927212153	39
+212	199	0.016802212153	39
+212	329	1.062802212153	1285
+212	367	1.067677212153	39
+212	499	1.962802212153	1285
+213	180	0.007052212153	32
+213	191	0.011927212153	32
+213	199	0.016802212153	32
+213	329	1.062802212153	1278
+213	367	1.067677212153	32
+213	499	1.962802212153	1278
+214	185	0.010089046863	39
+214	196	0.014964046863	39
+214	202	0.019839046863	39
+214	360	1.065839046863	1285
+214	398	1.443621901871	39
+214	534	1.965839046863	1285
+215	185	0.010089046863	32
+215	196	0.014964046863	32
+215	202	0.019839046863	32
+215	360	1.065839046863	1278
+215	398	1.443621901871	32
+215	534	1.965839046863	1278
+216	188	0.01048761683	35
+216	322	1.007647677151	803
+216	370	1.071272677151	509
+216	375	1.171647677151	803
+216	385	1.235272677151	509
+216	390	1.395897677151	1285
+216	495	1.90768454224	803
+217	188	0.01048761683	28
+217	322	1.007647677151	796
+217	370	1.071272677151	502
+217	375	1.171647677151	796
+217	385	1.235272677151	502
+217	390	1.395897677151	1278
+217	495	1.90768454224	796
+218	205	0.9	1250
+218	401	1.8	1250
+219	206	0.9	1250
+219	402	1.8	1250
+220	207	0.9	1250
+220	403	1.8	1250
+221	208	0.9	1250
+221	404	1.8	1250
+222	209	0.9	1250
+222	405	1.8	1250
+223	210	0.9	1250
+223	406	1.8	1250
+224	213	0.9	1258
+224	407	1.8	1258
+225	216	0.9	1258
+225	408	1.8	1258
+226	219	0.9	1258
+226	409	1.8	1258
+227	222	0.9	1258
+227	410	1.8	1258
+228	225	0.9	1258
+228	411	1.8	1258
+229	228	0.9	1258
+229	412	1.8	1258
+230	235	0.1	7680
+230	235	0.2	0
+230	235	0.3	0
+230	235	0.4	0
+230	235	0.5	0
+230	235	0.6	0
+230	235	0.7	0
+230	235	0.8	0
+230	235	0.9	0
+231	235	0.1	7680
+231	235	0.2	0
+231	235	0.3	0
+231	235	0.4	0
+231	235	0.5	0
+231	235	0.6	0
+231	235	0.7	0
+231	235	0.8	0
+231	235	0.9	0
+232	236	0.9	1278
+233	236	0.9	1278
+234	237	0.1	9920
+234	237	0.2	0
+234	237	0.3	0
+234	237	0.4	0
+234	237	0.5	0
+234	237	0.6	0
+234	237	0.7	0
+234	237	0.8	0
+234	237	0.9	0
+234	420	1	102240
+234	420	1.1	0
+234	420	1.2	0
+234	420	1.3	0
+234	420	1.4	0
+234	420	1.5	0
+234	420	1.6	0
+234	420	1.7	0
+234	420	1.8	0
+235	237	0.1	9920
+235	237	0.2	0
+235	237	0.3	0
+235	237	0.4	0
+235	237	0.5	0
+235	237	0.6	0
+235	237	0.7	0
+235	237	0.8	0
+235	237	0.9	0
+235	420	1	102240
+235	420	1.1	0
+235	420	1.2	0
+235	420	1.3	0
+235	420	1.4	0
+235	420	1.5	0
+235	420	1.6	0
+235	420	1.7	0
+235	420	1.8	0
+236	238	0.1	9920
+236	238	0.2	0
+236	238	0.3	0
+236	238	0.4	0
+236	238	0.5	0
+236	238	0.6	0
+236	238	0.7	0
+236	238	0.8	0
+236	238	0.9	0
+236	379	1	102240
+236	379	1.1	0
+236	421	1.2	2560
+236	421	1.3	0
+236	421	1.4	0
+236	421	1.5	0
+236	421	1.6	0
+236	421	1.7	0
+236	421	1.8	0
+237	238	0.1	9920
+237	238	0.2	0
+237	238	0.3	0
+237	238	0.4	0
+237	238	0.5	0
+237	238	0.6	0
+237	238	0.7	0
+237	238	0.8	0
+237	238	0.9	0
+237	379	1	102240
+237	379	1.1	0
+237	421	1.2	2560
+237	421	1.3	0
+237	421	1.4	0
+237	421	1.5	0
+237	421	1.6	0
+237	421	1.7	0
+237	421	1.8	0
+238	239	0.1	7680
+238	239	0.2	0
+238	239	0.3	0
+238	239	0.4	0
+238	239	0.5	0
+238	239	0.6	0
+238	239	0.7	0
+238	239	0.8	0
+238	239	0.9	0
+238	423	1	102240
+238	423	1.1	0
+238	423	1.2	0
+238	423	1.3	0
+238	423	1.4	0
+238	423	1.5	0
+238	423	1.6	0
+238	423	1.7	0
+238	423	1.8	0
+239	239	0.1	7680
+239	239	0.2	0
+239	239	0.3	0
+239	239	0.4	0
+239	239	0.5	0
+239	239	0.6	0
+239	239	0.7	0
+239	239	0.8	0
+239	239	0.9	0
+239	423	1	102240
+239	423	1.1	0
+239	423	1.2	0
+239	423	1.3	0
+239	423	1.4	0
+239	423	1.5	0
+239	423	1.6	0
+239	423	1.7	0
+239	423	1.8	0
+240	240	0.9	1278
+240	424	1.8	1278
+241	240	0.9	1278
+241	424	1.8	1278
+242	241	0.1	7680
+242	241	0.2	0
+242	241	0.3	0
+242	241	0.4	0
+242	241	0.5	0
+242	241	0.6	0
+242	241	0.7	0
+242	241	0.8	0
+242	241	0.9	0
+242	396	1	102240
+242	396	1.1	0
+242	396	1.2	0
+242	396	1.3	0
+242	396	1.4	0
+242	425	1.5	2560
+242	425	1.6	0
+242	425	1.7	0
+242	425	1.8	0
+243	241	0.1	7680
+243	241	0.2	0
+243	241	0.3	0
+243	241	0.4	0
+243	241	0.5	0
+243	241	0.6	0
+243	241	0.7	0
+243	241	0.8	0
+243	241	0.9	0
+243	396	1	102240
+243	396	1.1	0
+243	396	1.2	0
+243	396	1.3	0
+243	396	1.4	0
+243	425	1.5	2560
+243	425	1.6	0
+243	425	1.7	0
+243	425	1.8	0
+244	242	0.1	7680
+244	242	0.2	0
+244	242	0.3	0
+244	242	0.4	0
+244	242	0.5	0
+244	242	0.6	0
+244	242	0.7	0
+244	242	0.8	0
+244	242	0.9	0
+244	326	1	102240
+244	427	1.1	2560
+244	427	1.2	0
+244	427	1.3	0
+244	427	1.4	0
+244	427	1.5	0
+244	427	1.6	0
+244	427	1.7	0
+244	427	1.8	0
+245	242	0.1	7680
+245	242	0.2	0
+245	242	0.3	0
+245	242	0.4	0
+245	242	0.5	0
+245	242	0.6	0
+245	242	0.7	0
+245	242	0.8	0
+245	242	0.9	0
+245	328	1	102240
+245	427	1.1	2560
+245	427	1.2	0
+245	427	1.3	0
+245	427	1.4	0
+245	427	1.5	0
+245	427	1.6	0
+245	427	1.7	0
+245	427	1.8	0
+246	245	0.9	1258
+246	477	1.802416047717	1258
+247	246	0.9	1258
+247	365	1.067064325115	1258
+247	434	1.8	1258
+248	247	0.9	1250
+248	366	1.067064325115	1250
+249	247	0.1	0
+249	247	0.2	0
+249	247	0.3	0
+249	247	0.4	0
+249	247	0.5	0
+249	247	0.6	0
+249	247	0.7	0
+249	247	0.8	0
+249	247	0.9	0
+249	366	1	100000
+250	247	0.9	0
+250	366	1.067064325115	0.167064325115
+251	247	0.9	0
+251	366	1.067064325115	0
+252	254	0.1	2240
+252	254	0.2	0
+252	254	0.3	0
+252	254	0.4	0
+252	254	0.5	0
+252	254	0.6	0
+252	254	0.7	0
+252	254	0.8	0
+252	254	0.9	0
+252	445	1	306720
+252	445	1.1	0
+252	445	1.2	0
+252	445	1.3	0
+252	445	1.4	0
+252	445	1.5	0
+252	445	1.6	0
+252	445	1.7	0
+252	445	1.8	0
+253	254	0.1	2240
+253	254	0.2	0
+253	254	0.3	0
+253	254	0.4	0
+253	254	0.5	0
+253	254	0.6	0
+253	254	0.7	0
+253	254	0.8	0
+253	254	0.9	0
+253	445	1	306720
+253	445	1.1	0
+253	445	1.2	0
+253	445	1.3	0
+253	445	1.4	0
+253	445	1.5	0
+253	445	1.6	0
+253	445	1.7	0
+253	445	1.8	0
+254	258	0.1	2240
+254	258	0.2	0
+254	258	0.3	0
+254	258	0.4	0
+254	258	0.5	0
+254	258	0.6	0
+254	258	0.7	0
+254	258	0.8	0
+254	258	0.9	0
+254	453	1	207680
+254	453	1.1	0
+254	453	1.2	0
+254	453	1.3	0
+254	453	1.4	0
+254	453	1.5	0
+254	453	1.6	0
+254	453	1.7	0
+254	453	1.8	0
+255	258	0.1	2240
+255	258	0.2	0
+255	258	0.3	0
+255	258	0.4	0
+255	258	0.5	0
+255	258	0.6	0
+255	258	0.7	0
+255	258	0.8	0
+255	258	0.9	0
+255	453	1	207680
+255	453	1.1	0
+255	453	1.2	0
+255	453	1.3	0
+255	453	1.4	0
+255	453	1.5	0
+255	453	1.6	0
+255	453	1.7	0
+255	453	1.8	0
+256	263	0.1	2240
+256	263	0.2	0
+256	263	0.3	0
+256	263	0.4	0
+256	263	0.5	0
+256	263	0.6	0
+256	263	0.7	0
+256	263	0.8	0
+256	263	0.9	0
+256	442	1	102240
+256	442	1.1	0
+256	442	1.2	0
+256	442	1.3	0
+256	442	1.4	0
+256	442	1.5	0
+256	442	1.6	0
+256	442	1.7	0
+256	442	1.8	0
+257	263	0.1	2240
+257	263	0.2	0
+257	263	0.3	0
+257	263	0.4	0
+257	263	0.5	0
+257	263	0.6	0
+257	263	0.7	0
+257	263	0.8	0
+257	263	0.9	0
+257	442	1	102240
+257	442	1.1	0
+257	442	1.2	0
+257	442	1.3	0
+257	442	1.4	0
+257	442	1.5	0
+257	442	1.6	0
+257	442	1.7	0
+257	442	1.8	0
+258	266	0.1	2240
+258	266	0.2	0
+258	266	0.3	0
+258	266	0.4	0
+258	266	0.5	0
+258	266	0.6	0
+258	266	0.7	0
+258	266	0.8	0
+258	266	0.9	0
+258	362	1	207680
+258	458	1.1	102240
+258	458	1.2	0
+258	458	1.3	0
+258	458	1.4	0
+258	458	1.5	0
+258	458	1.6	0
+258	458	1.7	0
+258	458	1.8	0
+259	266	0.1	2240
+259	266	0.2	0
+259	266	0.3	0
+259	266	0.4	0
+259	266	0.5	0
+259	266	0.6	0
+259	266	0.7	0
+259	266	0.8	0
+259	266	0.9	0
+259	318	1	63680
+259	374	1.1	103840
+259	384	1.2	40160
+259	458	1.3	102240
+259	458	1.4	0
+259	458	1.5	0
+259	458	1.6	0
+259	458	1.7	0
+259	458	1.8	0
+259	494	1.9	63680
+260	277	0.1	2240
+260	277	0.2	0
+260	277	0.3	0
+260	277	0.4	0
+260	277	0.5	0
+260	277	0.6	0
+260	277	0.7	0
+260	277	0.8	0
+260	277	0.9	0
+260	336	1	102240
+260	449	1.1	103840
+260	449	1.2	0
+260	449	1.3	0
+260	449	1.4	0
+260	449	1.5	0
+260	449	1.6	0
+260	449	1.7	0
+260	449	1.8	0
+260	541	1.9	102240
+261	277	0.1	2240
+261	277	0.2	0
+261	277	0.3	0
+261	277	0.4	0
+261	277	0.5	0
+261	277	0.6	0
+261	277	0.7	0
+261	277	0.8	0
+261	277	0.9	0
+261	336	1	102240
+261	449	1.1	103840
+261	449	1.2	0
+261	449	1.3	0
+261	449	1.4	0
+261	449	1.5	0
+261	449	1.6	0
+261	449	1.7	0
+261	449	1.8	0
+261	541	1.9	102240
+262	281	0.1	2240
+262	281	0.2	0
+262	281	0.3	0
+262	281	0.4	0
+262	281	0.5	0
+262	281	0.6	0
+262	281	0.7	0
+262	281	0.8	0
+262	281	0.9	0
+262	506	1	102240
+262	506	1.1	0
+262	506	1.2	0
+262	506	1.3	0
+262	506	1.4	0
+262	506	1.5	0
+262	506	1.6	0
+262	506	1.7	0
+262	506	1.8	0
+262	506	1.9	0
+263	281	0.1	2240
+263	281	0.2	0
+263	281	0.3	0
+263	281	0.4	0
+263	281	0.5	0
+263	281	0.6	0
+263	281	0.7	0
+263	281	0.8	0
+263	281	0.9	0
+263	506	1	102240
+263	506	1.1	0
+263	506	1.2	0
+263	506	1.3	0
+263	506	1.4	0
+263	506	1.5	0
+263	506	1.6	0
+263	506	1.7	0
+263	506	1.8	0
+263	506	1.9	0
+264	285	0.1	2240
+264	285	0.2	0
+264	285	0.3	0
+264	285	0.4	0
+264	285	0.5	0
+264	285	0.6	0
+264	285	0.7	0
+264	285	0.8	0
+264	285	0.9	0
+264	344	1	102240
+264	464	1.1	103840
+264	464	1.2	0
+264	464	1.3	0
+264	464	1.4	0
+264	464	1.5	0
+264	464	1.6	0
+264	464	1.7	0
+264	464	1.8	0
+265	285	0.1	2240
+265	285	0.2	0
+265	285	0.3	0
+265	285	0.4	0
+265	285	0.5	0
+265	285	0.6	0
+265	285	0.7	0
+265	285	0.8	0
+265	285	0.9	0
+265	344	1	102240
+265	464	1.1	103840
+265	464	1.2	0
+265	464	1.3	0
+265	464	1.4	0
+265	464	1.5	0
+265	464	1.6	0
+265	464	1.7	0
+265	464	1.8	0
+266	289	0.1	2240
+266	289	0.2	0
+266	289	0.3	0
+266	289	0.4	0
+266	289	0.5	0
+266	289	0.6	0
+266	289	0.7	0
+266	289	0.8	0
+266	289	0.9	0
+266	514	1	102240
+266	514	1.1	0
+266	514	1.2	0
+266	514	1.3	0
+266	514	1.4	0
+266	514	1.5	0
+266	514	1.6	0
+266	514	1.7	0
+266	514	1.8	0
+266	514	1.9	0
+267	289	0.1	2240
+267	289	0.2	0
+267	289	0.3	0
+267	289	0.4	0
+267	289	0.5	0
+267	289	0.6	0
+267	289	0.7	0
+267	289	0.8	0
+267	289	0.9	0
+267	514	1	102240
+267	514	1.1	0
+267	514	1.2	0
+267	514	1.3	0
+267	514	1.4	0
+267	514	1.5	0
+267	514	1.6	0
+267	514	1.7	0
+267	514	1.8	0
+267	514	1.9	0
+268	301	0.1	2240
+268	301	0.2	0
+268	301	0.3	0
+268	301	0.4	0
+268	301	0.5	0
+268	301	0.6	0
+268	301	0.7	0
+268	301	0.8	0
+268	301	0.9	0
+269	301	0.1	2240
+269	301	0.2	0
+269	301	0.3	0
+269	301	0.4	0
+269	301	0.5	0
+269	301	0.6	0
+269	301	0.7	0
+269	301	0.8	0
+269	301	0.9	0
+269	319	1	63680
+270	312	0.902333642802	1258
+270	433	1.8	1258
+270	527	1.963980340731	1258
+271	313	0.902333642802	1250
+271	528	1.963980340731	1250
+272	313	0.1	0
+272	313	0.2	0
+272	313	0.3	0
+272	313	0.4	0
+272	313	0.5	0
+272	313	0.6	0
+272	313	0.7	0
+272	313	0.8	0
+272	313	0.9	0
+272	528	1	100000
+272	528	1.1	0
+272	528	1.2	0
+272	528	1.3	0
+272	528	1.4	0
+272	528	1.5	0
+272	528	1.6	0
+272	528	1.7	0
+272	528	1.8	0
+272	528	1.9	0
+273	313	0.902333642802	0.002333642802
+273	528	1.963980340731	0.163980340731
+274	313	0.902333642802	0
+274	528	1.963980340731	1
+275	316	0.902478869823	1258
+275	355	1.06412784067	1258
+275	486	1.802478869823	1258
+276	317	0.902478869823	1250
+276	356	1.06412784067	1250
+276	488	1.802478869823	1250
+277	317	0.1	0
+277	317	0.2	0
+277	317	0.3	0
+277	317	0.4	0
+277	317	0.5	0
+277	317	0.6	0
+277	317	0.7	0
+277	317	0.8	0
+277	317	0.9	0
+277	356	1	100000
+277	488	1.1	100000
+277	488	1.2	0
+277	488	1.3	0
+277	488	1.4	0
+277	488	1.5	0
+277	488	1.6	0
+277	488	1.7	0
+277	488	1.8	0
+278	317	0.902478869823	0.002478869823
+278	356	1.06412784067	0.16412784067
+278	488	1.802478869823	0.002478869823
+279	317	0.902478869823	0
+279	356	1.06412784067	0
+279	488	1.802478869823	1
+280	331	0.1	2240
+280	331	0.2	0
+280	331	0.3	0
+280	331	0.4	0
+280	331	0.5	0
+280	331	0.6	0
+280	331	0.7	0
+280	331	0.8	0
+280	331	0.9	0
+280	331	1	0
+280	501	1.1	103840
+280	501	1.2	0
+280	501	1.3	0
+280	501	1.4	0
+280	501	1.5	0
+280	501	1.6	0
+280	501	1.7	0
+280	501	1.8	0
+280	501	1.9	0
+281	331	0.1	2240
+281	331	0.2	0
+281	331	0.3	0
+281	331	0.4	0
+281	331	0.5	0
+281	331	0.6	0
+281	331	0.7	0
+281	331	0.8	0
+281	331	0.9	0
+281	331	1	0
+281	501	1.1	103840
+281	501	1.2	0
+281	501	1.3	0
+281	501	1.4	0
+281	501	1.5	0
+281	501	1.6	0
+281	501	1.7	0
+281	501	1.8	0
+281	501	1.9	0
+282	372	1.071272677151	1258
+282	387	1.235272677151	1258
+282	392	1.395897677151	1258
+282	435	1.8	1258
+283	373	1.071272677151	1250
+283	388	1.235272677151	1250
+283	393	1.395897677151	1250
+284	373	0.1	0
+284	373	0.2	0
+284	373	0.3	0
+284	373	0.4	0
+284	373	0.5	0
+284	373	0.6	0
+284	373	0.7	0
+284	373	0.8	0
+284	373	0.9	0
+284	373	1	0
+284	388	1.1	100000
+284	388	1.2	0
+284	393	1.3	100000
+285	373	1.071272677151	0.171272677151
+285	388	1.235272677151	0.335272677151
+285	393	1.395897677151	0.495897677151
+286	373	1.071272677151	0
+286	388	1.235272677151	0
+286	393	1.395897677151	0
+287	419	1.8	1278
+288	419	1.8	1278
+289	422	1.8	1278
+290	422	1.8	1278
+291	426	1.8	1278
+292	426	1.8	1278
+293	432	1.8	1258
+293	482	1.802424292421	1258
+293	492	1.803452292421	1258
+294	436	1.8	1250
+294	483	1.802424292421	1250
+294	493	1.803452292421	1250
+295	436	0.1	0
+295	436	0.2	0
+295	436	0.3	0
+295	436	0.4	0
+295	436	0.5	0
+295	436	0.6	0
+295	436	0.7	0
+295	436	0.8	0
+295	436	0.9	0
+295	436	1	0
+295	436	1.1	0
+295	436	1.2	0
+295	436	1.3	0
+295	436	1.4	0
+295	436	1.5	0
+295	436	1.6	0
+295	436	1.7	0
+295	436	1.8	0
+296	436	1.8	0
+296	483	1.802424292421	0.002424292421
+296	493	1.803452292421	0.003452292421
+297	436	1.8	1
+297	483	1.802424292421	1
+297	493	1.803452292421	1
+298	462	0.1	2240
+298	462	0.2	0
+298	462	0.3	0
+298	462	0.4	0
+298	462	0.5	0
+298	462	0.6	0
+298	462	0.7	0
+298	462	0.8	0
+298	462	0.9	0
+298	462	1	0
+298	462	1.1	0
+298	462	1.2	0
+298	462	1.3	0
+298	462	1.4	0
+298	462	1.5	0
+298	462	1.6	0
+298	462	1.7	0
+298	462	1.8	0
+299	462	0.1	2240
+299	462	0.2	0
+299	462	0.3	0
+299	462	0.4	0
+299	462	0.5	0
+299	462	0.6	0
+299	462	0.7	0
+299	462	0.8	0
+299	462	0.9	0
+299	462	1	0
+299	462	1.1	0
+299	462	1.2	0
+299	462	1.3	0
+299	462	1.4	0
+299	462	1.5	0
+299	462	1.6	0
+299	462	1.7	0
+299	462	1.8	0
+300	463	0.1	2240
+300	463	0.2	0
+300	463	0.3	0
+300	463	0.4	0
+300	463	0.5	0
+300	463	0.6	0
+300	463	0.7	0
+300	463	0.8	0
+300	463	0.9	0
+300	463	1	0
+300	463	1.1	0
+300	463	1.2	0
+300	463	1.3	0
+300	463	1.4	0
+300	463	1.5	0
+300	463	1.6	0
+300	463	1.7	0
+300	463	1.8	0
+301	463	0.1	2240
+301	463	0.2	0
+301	463	0.3	0
+301	463	0.4	0
+301	463	0.5	0
+301	463	0.6	0
+301	463	0.7	0
+301	463	0.8	0
+301	463	0.9	0
+301	463	1	0
+301	463	1.1	0
+301	463	1.2	0
+301	463	1.3	0
+301	463	1.4	0
+301	463	1.5	0
+301	463	1.6	0
+301	463	1.7	0
+301	463	1.8	0
+302	478	0.1	2240
+302	478	0.2	0
+302	478	0.3	0
+302	478	0.4	0
+302	478	0.5	0
+302	478	0.6	0
+302	478	0.7	0
+302	478	0.8	0
+302	478	0.9	0
+302	478	1	0
+302	478	1.1	0
+302	478	1.2	0
+302	478	1.3	0
+302	478	1.4	0
+302	478	1.5	0
+302	478	1.6	0
+302	478	1.7	0
+302	478	1.8	0
+303	478	0.1	2240
+303	478	0.2	0
+303	478	0.3	0
+303	478	0.4	0
+303	478	0.5	0
+303	478	0.6	0
+303	478	0.7	0
+303	478	0.8	0
+303	478	0.9	0
+303	478	1	0
+303	478	1.1	0
+303	478	1.2	0
+303	478	1.3	0
+303	478	1.4	0
+303	478	1.5	0
+303	478	1.6	0
+303	478	1.7	0
+303	478	1.8	0
+304	479	1.802416047717	1250
+305	479	0.1	0
+305	479	0.2	0
+305	479	0.3	0
+305	479	0.4	0
+305	479	0.5	0
+305	479	0.6	0
+305	479	0.7	0
+305	479	0.8	0
+305	479	0.9	0
+305	479	1	0
+305	479	1.1	0
+305	479	1.2	0
+305	479	1.3	0
+305	479	1.4	0
+305	479	1.5	0
+305	479	1.6	0
+305	479	1.7	0
+305	479	1.8	0
+306	479	1.802416047717	0.002416047717
+307	479	1.802416047717	1
+308	487	0.1	2240
+308	487	0.2	0
+308	487	0.3	0
+308	487	0.4	0
+308	487	0.5	0
+308	487	0.6	0
+308	487	0.7	0
+308	487	0.8	0
+308	487	0.9	0
+308	487	1	0
+308	487	1.1	0
+308	487	1.2	0
+308	487	1.3	0
+308	487	1.4	0
+308	487	1.5	0
+308	487	1.6	0
+308	487	1.7	0
+308	487	1.8	0
+309	487	0.1	2240
+309	487	0.2	0
+309	487	0.3	0
+309	487	0.4	0
+309	487	0.5	0
+309	487	0.6	0
+309	487	0.7	0
+309	487	0.8	0
+309	487	0.9	0
+309	487	1	0
+309	487	1.1	0
+309	487	1.2	0
+309	487	1.3	0
+309	487	1.4	0
+309	487	1.5	0
+309	487	1.6	0
+309	487	1.7	0
+309	487	1.8	0
+310	530	1.96516498593	1278
+311	533	1.965692856262	1278
+230	541	1	102240
+230	541	1.1	0
+230	541	1.2	0
+230	541	1.3	0
+230	541	1.4	0
+230	541	1.5	0
+230	541	1.6	0
+230	541	1.7	0
+230	541	1.8	0
+230	541	1.9	0
+230	541	1.965853607402	0
+231	541	1	102240
+231	541	1.1	0
+231	541	1.2	0
+231	541	1.3	0
+231	541	1.4	0
+231	541	1.5	0
+231	541	1.6	0
+231	541	1.7	0
+231	541	1.8	0
+231	541	1.9	0
+231	541	1.965853607402	0
+234	541	1.9	102240
+234	541	1.965853607402	0
+235	541	1.9	102240
+235	541	1.965853607402	0
+236	541	1.9	102240
+236	541	1.965853607402	0
+237	541	1.9	102240
+237	541	1.965853607402	0
+238	541	1.9	102240
+238	541	1.965853607402	0
+239	541	1.9	102240
+239	541	1.965853607402	0
+242	541	1.9	102240
+242	541	1.965853607402	0
+243	541	1.9	102240
+243	541	1.965853607402	0
+244	541	1.9	102240
+244	541	1.965853607402	0
+245	541	1.9	102240
+245	541	1.965853607402	0
+249	541	1.1	100000
+249	541	1.2	0
+249	541	1.3	0
+249	541	1.4	0
+249	541	1.5	0
+249	541	1.6	0
+249	541	1.7	0
+249	541	1.8	0
+249	541	1.9	0
+249	541	1.965853607402	0
+252	541	1.9	102240
+252	541	1.965853607402	0
+253	541	1.9	102240
+253	541	1.965853607402	0
+254	541	1.9	103840
+254	541	1.965853607402	0
+255	541	1.9	103840
+255	541	1.965853607402	0
+256	541	1.9	102240
+256	541	1.965853607402	0
+257	541	1.9	102240
+257	541	1.965853607402	0
+258	541	1.9	103840
+258	541	1.965853607402	0
+259	541	1.965853607402	60983.751056864
+260	541	1.965853607402	96699.334345146
+261	541	1.965853607402	96699.334345146
+262	541	1.965853607402	157683.08540201
+263	541	1.965853607402	157683.08540201
+264	541	1.9	102240
+264	541	1.965853607402	0
+265	541	1.9	102240
+265	541	1.965853607402	0
+266	541	1.965853607402	157683.08540201
+267	541	1.965853607402	157683.08540201
+268	541	1	103840
+268	541	1.1	0
+268	541	1.2	0
+268	541	1.3	0
+268	541	1.4	0
+268	541	1.5	0
+268	541	1.6	0
+268	541	1.7	0
+268	541	1.8	0
+268	541	1.9	0
+268	541	1.965853607402	0
+269	541	1.1	40160
+269	541	1.2	0
+269	541	1.3	0
+269	541	1.4	0
+269	541	1.5	0
+269	541	1.6	0
+269	541	1.7	0
+269	541	1.8	0
+269	541	1.9	0
+269	541	1.965853607402	0
+272	541	1.965853607402	151851.96976311
+277	541	1.9	100000
+277	541	1.965853607402	0
+280	541	1.965853607402	315366.17080402
+281	541	1.965853607402	315366.17080402
+284	541	1.4	100000
+284	541	1.5	0
+284	541	1.6	0
+284	541	1.7	0
+284	541	1.8	0
+284	541	1.9	0
+284	541	1.965853607402	0
+295	541	1.9	300000
+295	541	1.965853607402	0
+298	541	1.9	204480
+298	541	1.965853607402	0
+299	541	1.9	204480
+299	541	1.965853607402	0
+300	541	1.9	102240
+300	541	1.965853607402	0
+301	541	1.9	102240
+301	541	1.965853607402	0
+302	541	1.9	102240
+302	541	1.965853607402	0
+303	541	1.9	102240
+303	541	1.965853607402	0
+305	541	1.9	100000
+305	541	1.965853607402	0
+308	541	1.9	102240
+308	541	1.965853607402	0
+309	541	1.9	102240
+309	541	1.965853607402	0
+

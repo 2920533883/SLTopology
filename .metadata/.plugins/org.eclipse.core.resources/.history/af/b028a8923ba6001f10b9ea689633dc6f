@@ -1,0 +1,4 @@
+<config>
+<interface hosts='**' address='10.x.x.x' netmask='255.x.x.x'/>
+  <multicast-group hosts="TCU2 TCU4 TCU5 TCU7" address="225.0.0.1"/>
+</config>
